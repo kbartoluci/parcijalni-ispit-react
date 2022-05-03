@@ -9,11 +9,15 @@ function App() {
     setUsername({ username: data.username });
   };
 
+  const handleReset = (data) => {
+    setUsername(null);
+  };
+
 
   return (
     <div className="App">
       {username === null && <SearchForm onSearch={handleSearch} />}
-      <GitHubUser {...username} />
+      <GitHubUser {...username} onReset={handleReset}/>
     </div>
   );
 }

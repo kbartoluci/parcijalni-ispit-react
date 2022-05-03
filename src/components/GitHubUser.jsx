@@ -1,3 +1,5 @@
+import { Button } from "./Button";
+
 export function GitHubUser(props) {
   const listItems = props.userRepositories.map((repo) => <li key={repo.id}>{repo.name}</li>);
 
@@ -9,6 +11,7 @@ export function GitHubUser(props) {
       <div>LOCATION: {props.location}</div>
       <div>REPOSITORIES:</div>
       <ul>{listItems}</ul>
+      <Button onClick={props.onReset}>Reset</Button>
     </div>
   );
 }

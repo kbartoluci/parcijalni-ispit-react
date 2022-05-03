@@ -24,6 +24,9 @@ export function GitHubUser(props) {
             .catch((error) => setError(error));
         })
         .catch((error) => setError(error));
+    } else {
+        setUserInfo(null);
+        setUserRepositories(null);
     }
   }, [props]);
 
@@ -44,6 +47,7 @@ export function GitHubUser(props) {
           location={userInfo.location}
           bio={userInfo.bio}
           userRepositories={userRepositories}
+          onReset={props.onReset}
         />
       )}
     </div>
